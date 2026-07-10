@@ -1,0 +1,390 @@
+# K-Nearest Neighbors (KNN) Interview Questions & Answers
+
+## 1. What is KNN?
+
+**Answer:**
+K-Nearest Neighbors (KNN) is a supervised machine learning algorithm used for both **classification** and **regression**. It predicts the output of a new data point based on the majority class (classification) or average value (regression) of its nearest neighbors.
+
+---
+
+## 2. Why is it called K-Nearest Neighbors?
+
+**Answer:**
+It is called K-Nearest Neighbors because it classifies or predicts a new data point using the **K closest neighboring data points**.
+
+* **K** = Number of neighbors.
+* **Nearest** = Closest based on a distance metric.
+* **Neighbors** = Nearby training data points.
+
+---
+
+## 3. Is KNN supervised or unsupervised?
+
+**Answer:**
+KNN is a **supervised learning** algorithm because it learns from labeled training data.
+
+---
+
+## 4. Can KNN perform regression?
+
+**Answer:**
+Yes. KNN can perform:
+
+* Classification
+* Regression (by averaging the values of the nearest neighbors)
+
+---
+
+## 5. How does KNN work?
+
+**Answer:**
+
+1. Choose the value of K.
+2. Calculate the distance between the new point and all training points.
+3. Select the K nearest neighbors.
+4. For classification, use majority voting.
+5. For regression, calculate the average of the K neighbors.
+
+---
+
+## 6. What is K in KNN?
+
+**Answer:**
+K represents the number of nearest neighbors used to make a prediction.
+
+Example:
+
+* K = 3 → Consider the 3 nearest neighbors.
+* K = 5 → Consider the 5 nearest neighbors.
+
+---
+
+## 7. How do you choose the value of K?
+
+**Answer:**
+The best value of K is selected using **cross-validation**.
+
+General guidelines:
+
+* Small K → More complex model, higher risk of overfitting.
+* Large K → Simpler model, higher risk of underfitting.
+
+---
+
+## 8. What happens if K = 1?
+
+**Answer:**
+The model classifies a new point based on only its closest neighbor, making it highly sensitive to noise and prone to overfitting.
+
+---
+
+## 9. What happens if K is very large?
+
+**Answer:**
+The model considers many neighbors, creating smoother decision boundaries and increasing the risk of underfitting.
+
+---
+
+## 10. Why do we usually choose an odd value for K?
+
+**Answer:**
+An odd value helps avoid ties in binary classification problems.
+
+Example:
+
+* K = 4 → Possible tie (2 vs 2)
+* K = 5 → Majority vote is more likely.
+
+---
+
+## 11. What are the common distance metrics in KNN?
+
+**Answer:**
+
+* Euclidean Distance
+* Manhattan Distance
+* Minkowski Distance
+* Hamming Distance
+* Cosine Distance (in some applications)
+
+---
+
+## 12. What is Euclidean Distance?
+
+**Answer:**
+It is the straight-line distance between two points and is the most commonly used distance metric.
+
+---
+
+## 13. What is Manhattan Distance?
+
+**Answer:**
+It measures the distance by moving only horizontally and vertically, like navigating city streets.
+
+---
+
+## 14. What is Minkowski Distance?
+
+**Answer:**
+Minkowski Distance is a generalized distance metric. Euclidean and Manhattan distances are special cases of it.
+
+---
+
+## 15. Which distance metric is used most often?
+
+**Answer:**
+Euclidean Distance is the default and most commonly used metric for continuous numerical data.
+
+---
+
+## 16. Why is feature scaling important in KNN?
+
+**Answer:**
+KNN relies on distance calculations. Features with larger numerical ranges can dominate the distance, so scaling ensures all features contribute equally.
+
+---
+
+## 17. Which scaling methods are commonly used?
+
+**Answer:**
+
+* StandardScaler
+* MinMaxScaler
+
+---
+
+## 18. Does KNN have a training phase?
+
+**Answer:**
+No. KNN is a **lazy learning algorithm** because it stores the training data and performs computations only during prediction.
+
+---
+
+## 19. Why is KNN called a lazy learner?
+
+**Answer:**
+Because it does not build a model during training. It waits until prediction time to perform calculations.
+
+---
+
+## 20. What is an eager learning algorithm?
+
+**Answer:**
+An eager learning algorithm builds a model during training.
+
+Examples:
+
+* Logistic Regression
+* Decision Tree
+* Random Forest
+* SVM
+
+---
+
+## 21. What is the time complexity of KNN?
+
+**Answer:**
+
+* Training: **O(1)** (stores data)
+* Prediction: **O(n × d)**
+
+Where:
+
+* n = Number of training samples
+* d = Number of features
+
+---
+
+## 22. Why is KNN slow for large datasets?
+
+**Answer:**
+Because it computes the distance between the new point and every training sample during prediction.
+
+---
+
+## 23. What are the advantages of KNN?
+
+**Answer:**
+
+* Simple to understand
+* Easy to implement
+* No training phase
+* Works well with small datasets
+* Can handle multi-class classification
+
+---
+
+## 24. What are the disadvantages of KNN?
+
+**Answer:**
+
+* Slow prediction
+* Requires feature scaling
+* Sensitive to noise
+* Memory intensive
+* Performance decreases with high-dimensional data
+
+---
+
+## 25. What is the Curse of Dimensionality?
+
+**Answer:**
+As the number of features increases, distances between points become less meaningful, reducing KNN's performance.
+
+---
+
+## 26. Can KNN handle multiclass classification?
+
+**Answer:**
+Yes. KNN naturally supports binary and multiclass classification.
+
+---
+
+## 27. Can KNN handle missing values?
+
+**Answer:**
+No. Missing values should be handled using preprocessing techniques such as imputation.
+
+---
+
+## 28. Can KNN handle categorical variables?
+
+**Answer:**
+Not directly. Categorical variables should be encoded using techniques such as:
+
+* Label Encoding
+* One-Hot Encoding
+
+---
+
+## 29. Which evaluation metrics are used for KNN?
+
+**Answer:**
+
+* Accuracy
+* Precision
+* Recall
+* F1-Score
+* ROC-AUC
+* Confusion Matrix
+
+---
+
+## 30. Where is KNN used?
+
+**Answer:**
+
+* Recommendation Systems
+* Image Classification
+* Medical Diagnosis
+* Fraud Detection
+* Pattern Recognition
+* Document Classification
+* Customer Segmentation
+
+---
+
+## 31. When should you use KNN?
+
+**Answer:**
+Use KNN when:
+
+* Dataset is small to medium-sized.
+* Decision boundaries are non-linear.
+* High accuracy is required.
+* Training time should be minimal.
+
+---
+
+## 32. When should you avoid KNN?
+
+**Answer:**
+Avoid KNN when:
+
+* Dataset is very large.
+* Prediction speed is important.
+* Data has many features.
+* Memory is limited.
+
+---
+
+## 33. Difference between KNN and K-Means
+
+| KNN                       | K-Means             |
+| ------------------------- | ------------------- |
+| Supervised                | Unsupervised        |
+| Uses labeled data         | Uses unlabeled data |
+| Classification/Regression | Clustering          |
+| Predicts labels           | Groups similar data |
+
+---
+
+## 34. Difference between KNN and Logistic Regression
+
+| KNN             | Logistic Regression |
+| --------------- | ------------------- |
+| Instance-based  | Model-based         |
+| Lazy learner    | Eager learner       |
+| Non-parametric  | Parametric          |
+| Slow prediction | Fast prediction     |
+
+---
+
+## 35. Difference between KNN and SVM
+
+| KNN             | SVM                              |
+| --------------- | -------------------------------- |
+| Distance-based  | Margin-based                     |
+| Lazy learner    | Eager learner                    |
+| No training     | Training required                |
+| Slow prediction | Faster prediction after training |
+
+---
+
+## 36. Explain the KNN workflow.
+
+**Answer:**
+
+1. Collect data.
+2. Clean missing values.
+3. Encode categorical variables.
+4. Scale features.
+5. Split into training and testing sets.
+6. Choose the value of K.
+7. Train (store the dataset).
+8. Predict using nearest neighbors.
+9. Evaluate using Accuracy, Precision, Recall, F1-Score, ROC-AUC.
+
+---
+
+## 37. Hyperparameters in KNN
+
+**Answer:**
+
+* n_neighbors (K)
+* weights (uniform, distance)
+* metric (euclidean, manhattan, minkowski)
+* p (power parameter for Minkowski distance)
+* algorithm (auto, kd_tree, ball_tree, brute)
+
+---
+
+## 38. What is the 'weights' parameter?
+
+**Answer:**
+
+* **uniform** → All neighbors contribute equally.
+* **distance** → Closer neighbors have more influence.
+
+---
+
+## 39. What is the default distance metric in Scikit-learn KNN?
+
+**Answer:**
+Euclidean Distance (`metric='minkowski'` with `p=2`).
+
+---
+
+## 40. Interview Summary (30-Second Answer)
+
+**"K-Nearest Neighbors (KNN) is a supervised machine learning algorithm used for classification and regression. It predicts the output of a new data point based on the K nearest neighbors using distance metrics such as Euclidean or Manhattan distance. KNN is called a lazy learning algorithm because it does not build a model during training; instead, it stores the training data and performs computations during prediction. Feature scaling is essential because KNN relies on distance calculations. Choosing the right value of K is important to avoid overfitting and underfitting. KNN is simple, effective for small datasets, but can be slow on large datasets and is affected by the curse of dimensionality."**
