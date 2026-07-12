@@ -163,7 +163,7 @@ No. KNN is a **lazy learning algorithm** because it stores the training data and
 ## 19. Why is KNN called a lazy learner?
 
 **Answer:**
-Because it does not build a model during training. It waits until prediction time to perform calculations.
+Because it does not build a model during training.It waits until prediction time to perform calculations.
 
 ---
 
